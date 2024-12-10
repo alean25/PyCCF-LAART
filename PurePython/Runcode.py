@@ -29,7 +29,7 @@ flux2, mjd2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 ## Set Interpolation settings, user-specified
 #########################################
 lag_range = [-100, 100]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
-interp = 4  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
+interp = 1/24  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
 nsim = 500  # Number of Monte Carlo iterations for calculation of uncertainties
 mcmode = 0  # Do both FR/RSS sampling (1 = RSS only, 2 = FR only)
 sigmode = 0.2  # Choose the threshold for considering a measurement "significant". sigmode = 0.2 will consider all CCFs with r_max <= 0.2 as "failed". See code for different sigmodes.
