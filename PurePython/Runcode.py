@@ -20,8 +20,8 @@ CCCD, and CCPD, all into the current directory.
 ########################################
 ### Read in two light curves
 ########################################
-lc1 = "W1.dat"
-lc2 = "W2.dat"
+lc1 = "W1.DAT"
+lc2 = "W2.DAT"
 flux1, mjd1, err1 = np.loadtxt(lc1, unpack=True, usecols=[0, 1, 2])
 flux2, mjd2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 
