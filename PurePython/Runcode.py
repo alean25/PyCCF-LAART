@@ -20,15 +20,15 @@ CCCD, and CCPD, all into the current directory.
 ########################################
 ### Read in two light curves
 ########################################
-lc1 = "W2Binned.dat"
-lc2 = "ZTF.DAT"
-flux1, mjd1, err1 = np.loadtxt(lc1, unpack=True, usecols=[0, 1, 2])
-flux2, mjd2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
+lc1 = "binned005.tsv"
+lc2 = "o2c005_zg_binned10d.tsv"
+mjd1, flux1, err1 = np.loadtxt(lc1, unpack=True, usecols=[0, 1, 2])
+mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 
 #########################################
 ## Set Interpolation settings, user-specified
 #########################################
-lag_range = [-100, 100]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
+lag_range = [-400, 400]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
 interp = 1/24  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
 nsim = 500  # Number of Monte Carlo iterations for calculation of uncertainties
 mcmode = 0  # Do both FR/RSS sampling (1 = RSS only, 2 = FR only)
