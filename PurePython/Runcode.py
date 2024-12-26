@@ -28,7 +28,7 @@ mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 #########################################
 ## Set Interpolation settings, user-specified
 #########################################
-lag_range = [-400, 400]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
+lag_range = [-300, 300]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
 interp = 1/24  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
 nsim = 500  # Number of Monte Carlo iterations for calculation of uncertainties
 mcmode = 0  # Do both FR/RSS sampling (1 = RSS only, 2 = FR only)
@@ -92,7 +92,7 @@ ax1_2.set_ylabel('LC 2 Flux')
 ax1_2.set_xlabel('MJD')
 
 # Plot CCF Information
-xmin, xmax = -99, 99
+xmin, xmax = -400, 400
 ax2 = fig.add_subplot(3, 3, 7)
 ax2.set_ylabel('CCF r')
 ax2.text(0.2, 0.85, 'CCF', horizontalalignment='center', verticalalignment='center', transform=ax2.transAxes, fontsize=16)
