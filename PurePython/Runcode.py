@@ -21,7 +21,7 @@ CCCD, and CCPD, all into the current directory.
 ### Read in two light curves
 ########################################
 lc1 = "binned005.tsv"
-lc2 = "o2c005_zg_binned10d.tsv"
+lc2 = "o2c005_zg_fluxesincluded (1).tsv"
 mjd1, flux1, err1 = np.loadtxt(lc1, unpack=True, usecols=[0, 1, 2])
 mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 
@@ -30,7 +30,7 @@ mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 #########################################
 lag_range = [-300, 300]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
 interp = 1/24  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
-nsim = 1000  # Number of Monte Carlo iterations for calculation of uncertainties
+nsim = 500  # Number of Monte Carlo iterations for calculation of uncertainties
 mcmode = 0  # Do both FR/RSS sampling (1 = RSS only, 2 = FR only)
 sigmode = 0.2  # Choose the threshold for considering a measurement "significant". sigmode = 0.2 will consider all CCFs with r_max <= 0.2 as "failed". See code for different sigmodes.
 
