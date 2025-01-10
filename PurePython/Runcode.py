@@ -20,7 +20,7 @@ CCCD, and CCPD, all into the current directory.
 ########################################
 ### Read in two light curves
 ########################################
-lc1 = "005_G_aggressive_cut.tsv"
+lc1 = "ZTF_G_005_outlier_cut_1.tsv"
 lc2 = "binned005.tsv"
 mjd1, flux1, err1 = np.loadtxt(lc1, unpack=True, usecols=[0, 1, 2])
 mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
@@ -28,8 +28,8 @@ mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 #########################################
 ## Set Interpolation settings, user-specified
 #########################################
-lag_range = [-300, 300]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
-interp = 1/24  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
+lag_range = [-200, 200]  # Time lag range to consider in the CCF (days). Must be small enough that there is some overlap between light curves at that shift (i.e., if the light curves span 80 days, these values must be less than 80 days)
+interp = 1/10  # Interpolation time step (days). Must be less than the average cadence of the observations, but too small will introduce noise.
 nsim = 500  # Number of Monte Carlo iterations for calculation of uncertainties
 mcmode = 0  # Do both FR/RSS sampling (1 = RSS only, 2 = FR only)
 sigmode = 0.2  # Choose the threshold for considering a measurement "significant". sigmode = 0.2 will consider all CCFs with r_max <= 0.2 as "failed". See code for different sigmodes.
