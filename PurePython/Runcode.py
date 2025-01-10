@@ -20,8 +20,8 @@ CCCD, and CCPD, all into the current directory.
 ########################################
 ### Read in two light curves
 ########################################
-lc1 = "binned005.tsv"
-lc2 = "o2c005_zg_fluxesincluded (1).tsv"
+lc1 = "005_G_aggressive_cut.dat"
+lc2 = "ZTF_G_005_outlier_cut_1.dat"
 mjd1, flux1, err1 = np.loadtxt(lc1, unpack=True, usecols=[0, 1, 2])
 mjd2, flux2, err2 = np.loadtxt(lc2, unpack=True, usecols=[0, 1, 2])
 
